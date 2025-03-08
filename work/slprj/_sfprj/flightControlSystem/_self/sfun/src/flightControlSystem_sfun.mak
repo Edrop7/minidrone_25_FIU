@@ -6,7 +6,7 @@ CPU = AMD64
 
 MODEL     = flightControlSystem
 TARGET      = sfun
-MODULE_SRCS   = c4_flightControlSystem.c c8_flightControlSystem.c c11_flightControlSystem.c half_type.c
+MODULE_SRCS   = c4_flightControlSystem.c c11_flightControlSystem.c half_type.c
 MODEL_SRC  = flightControlSystem_sfun.c
 MODEL_REG = flightControlSystem_sfun_registry.c
 MAKEFILE    = flightControlSystem_sfun.mak
