@@ -116,15 +116,15 @@ typedef struct {
   uint8_T c11_JITTransitionAnimation[1];
   CovrtStateflowInstance *c11_covrtInstance;
   void *c11_fEmlrtCtx;
-  uint8_T (*c11_N)[1140];
-  uint8_T (*c11_E)[1140];
-  uint8_T (*c11_S)[1140];
-  uint8_T (*c11_W)[1140];
-  uint8_T (*c11_NE)[1140];
+  uint8_T (*c11_N)[1600];
+  uint8_T (*c11_E)[1600];
+  uint8_T (*c11_S)[1600];
+  uint8_T (*c11_W)[1600];
+  uint8_T (*c11_NE)[1600];
   real_T (*c11_BWimage)[19200];
-  uint8_T (*c11_NW)[1140];
-  uint8_T (*c11_SE)[1140];
-  uint8_T (*c11_SW)[1140];
+  uint8_T (*c11_NW)[1600];
+  uint8_T (*c11_SE)[1600];
+  uint8_T (*c11_SW)[1600];
 } SFc11_flightControlSystemInstanceStruct;
 
 #endif                                 /* typedef_SFc11_flightControlSystemInstanceStruct */
