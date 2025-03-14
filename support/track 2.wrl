@@ -1,8 +1,8 @@
 #VRML V2.0 utf8
 
 PROTO Gantry_part [
-  field SFRotation rot_G 0 0 0 0
   field SFVec3f trans_G 0 0 0
+  field SFRotation rot_G 0 0 0 0
 ]
 {
   Transform {
@@ -1013,9 +1013,9 @@ PROTO Gantry_part [
 }
 
 PROTO Gantry_pillar [
-  field SFVec3f scale_GP 1 1 1
-  field SFRotation rot_GP 0 0 0 0
   field SFVec3f trans_GP 0 0 0
+  field SFRotation rot_GP 0 0 0 0
+  field SFVec3f scale_GP 1 1 1
 ]
 {
   Transform {
@@ -1031,12 +1031,12 @@ PROTO Gantry_pillar [
         trans_G 0 0.25 -0.0666
       }
       Gantry_part {
-        rot_G 0 0 1 1.5708
         trans_G 0.05 0 -0.0666
+        rot_G 0 0 1 1.5708
       }
       Gantry_part {
-        rot_G 0 0 1 1.5708
         trans_G 0.3 0 -0.0666
+        rot_G 0 0 1 1.5708
       }
     ]
   }
@@ -1067,8 +1067,7 @@ Transform {
   }
 }
 DEF LandingSpot Transform {
-  translation 1.5 -0.022 3.25
-  scaleOrientation 0 0 0 0
+  translation 1 -0.02 3.3
   rotation 0 0 0 0
   children Shape {
     appearance Appearance {
@@ -1083,7 +1082,6 @@ DEF LandingSpot Transform {
   }
 }
 DEF Lines Transform {
-  translation 0.5 0 0
   rotation 0 1 0 -1.5708
   children DEF Lines_Shape Shape {
     appearance Appearance {
@@ -1105,10 +1103,10 @@ DEF Lines Transform {
           1.05 -0.02 -1.95,
           0.95 -0.02 -1.95,
           0.95 -0.02 -3.05,
-          1 -0.02 -2.0707,
-          2.0707 -0.02 -1,
-          2 -0.02 -0.92929,
-          0.92929 -0.02 -2,
+          1 -0.02 -2.070711,
+          2.070711 -0.02 -1,
+          2 -0.02 -0.9292893,
+          0.9292893 -0.02 -2,
           1.95 -0.02 -1.05,
           3.05 -0.02 -1.05,
           3.05 -0.02 -0.95,
@@ -1328,40 +1326,40 @@ DEF Cage Transform {
       }
     }
     DEF Pole1_pillar Gantry_pillar {
-      scale_GP 1 1 0.925
-      rot_GP 1 0 0 1.5708
       trans_GP 0 1.85 -0.3
+      rot_GP 1 0 0 1.5708
+      scale_GP 1 1 0.925
     }
     DEF Pole2_pillar Gantry_pillar {
-      scale_GP 1 1 0.925
-      rot_GP 1 0 0 1.5708
       trans_GP 0 1.85 -4
+      rot_GP 1 0 0 1.5708
+      scale_GP 1 1 0.925
     }
     DEF Pole3_pillar Gantry_pillar {
-      scale_GP 1 1 0.925
-      rot_GP 1 0 0 1.5708
       trans_GP 3.7 1.85 -4
+      rot_GP 1 0 0 1.5708
+      scale_GP 1 1 0.925
     }
     DEF Pole4_pillar Gantry_pillar {
-      scale_GP 1 1 0.925
-      rot_GP 1 0 0 1.5708
       trans_GP 3.7 1.85 -0.3
+      rot_GP 1 0 0 1.5708
+      scale_GP 1 1 0.925
     }
     DEF Pole5_pillar Gantry_pillar {
-      rot_GP 0 1 0 1.5708
       trans_GP 2 3.7 0
+      rot_GP 0 1 0 1.5708
     }
     DEF Pole6_pillar Gantry_pillar {
-      rot_GP 0 1 0 1.5708
       trans_GP 2 3.7 -3.7
+      rot_GP 0 1 0 1.5708
     }
     DEF Pole7_pillar Gantry_pillar {
-      scale_GP 1 1 0.85
       trans_GP 0 3.7 -2
+      scale_GP 1 1 0.85
     }
     DEF Pole8_pillar Gantry_pillar {
-      scale_GP 1 1 0.85
       trans_GP 3.7 3.7 -2
+      scale_GP 1 1 0.85
     }
   ]
 }
@@ -1424,11 +1422,10 @@ DEF Static_Objects Transform {
   ]
 }
 DEF QuadBody Transform {
-  translation 0.5 0 1
+  translation 3 0.001765 1
   scaleOrientation 0 1 0 0
   children [
     DEF UAV_Collision Transform {
-      translation 3 0 0
       children [
         Shape {
           appearance Appearance {
@@ -1449,7 +1446,6 @@ DEF QuadBody Transform {
       ]
     }
     DEF Airframe Transform {
-      translation 3 0 0
       scaleOrientation 1 0 0 0
       rotation 0 1 0 0
       children Inline {
@@ -1457,37 +1453,37 @@ DEF QuadBody Transform {
       }
     }
     DEF Blade1 Transform {
-      translation 3.0425 0.015 -0.0425
+      translation 0.0425 0.015 -0.0425
       children Inline {
         url "asbQuadcopterBladeCW.wrl" 
       }
     }
     DEF Blade3 Transform {
-      translation 2.9575 0.015 0.0425
+      translation -0.0425 0.015 0.0425
       children Inline {
         url "asbQuadcopterBladeCW.wrl" 
       }
     }
     DEF Blade2 Transform {
-      translation 2.9575 0.015 -0.0425
+      translation -0.0425 0.015 -0.0425
       children Inline {
         url "asbQuadcopterBladeCCW.wrl" 
       }
     }
     DEF Blade4 Transform {
-      translation 3.0425 0.015 0.0425
+      translation 0.0425 0.015 0.0425
       children Inline {
         url "asbQuadcopterBladeCCW.wrl" 
       }
     }
     DEF Camera Viewpoint {
       description "Quadcopter Camera"
-      position 3 -0.1 0
+      position 0 -0.1 0
       orientation 1 0 0 -1.57
     }
     DEF OnQuad Viewpoint {
       description "Chase"
-      position 2 0.25 0
+      position -1 0.25 0
       orientation 0 1 0 -1.57
     }
   ]
@@ -1499,6 +1495,21 @@ DEF IsoNoRotation Viewpoint {
 }
 DEF OnQuadNoRotation Viewpoint {
   description "Chase - No Rotation"
-  position 0 1.0018 1
+  position 0 1.001765 1
   orientation 0 -1 -0 1.57
+}
+DEF BlueMarker Transform {
+  translation 0.5 -0.02 2
+  rotation 0 0 0 0
+  children Shape {
+    appearance Appearance {
+      material DEF LS_Mat_0001 Material {
+        emissiveColor 0 0 1
+        diffuseColor 0 0 1
+      }
+    }
+    geometry Box {
+      size 0.2 0.01 0.2
+    }
+  }
 }
