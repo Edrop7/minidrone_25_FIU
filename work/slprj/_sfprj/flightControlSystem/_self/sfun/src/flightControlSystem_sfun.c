@@ -3,6 +3,7 @@
 #include "flightControlSystem_sfun.h"
 #include "c4_flightControlSystem.h"
 #include "c11_flightControlSystem.h"
+#include "c14_flightControlSystem.h"
 
 /* Forward Declarations */
 /* Type Definitions */
@@ -35,6 +36,11 @@ unsigned int sf_flightControlSystem_method_dispatcher(SimStruct *simstructPtr,
 
   if (chartFileNumber==11) {
     c11_flightControlSystem_method_dispatcher(simstructPtr, method, data);
+    return 1;
+  }
+
+  if (chartFileNumber==14) {
+    c14_flightControlSystem_method_dispatcher(simstructPtr, method, data);
     return 1;
   }
 
@@ -80,6 +86,13 @@ unsigned int sf_flightControlSystem_process_check_sum_call( int nlhs, mxArray *
         {
           extern void sf_c11_flightControlSystem_get_check_sum(mxArray *plhs[]);
           sf_c11_flightControlSystem_get_check_sum(plhs);
+          break;
+        }
+
+       case 14:
+        {
+          extern void sf_c14_flightControlSystem_get_check_sum(mxArray *plhs[]);
+          sf_c14_flightControlSystem_get_check_sum(plhs);
           break;
         }
 
@@ -163,6 +176,19 @@ unsigned int sf_flightControlSystem_get_eml_resolved_functions_info( int nlhs,
         }
       }
 
+     case 14:
+      {
+        if (strcmp(instanceChksum, "s2fN5P7G8JbatJ1JIWzy1NB") == 0) {
+          extern const mxArray
+            *sf_c14_flightControlSystem_get_eml_resolved_functions_info(void);
+          mxArray *persistentMxArray = (mxArray *)
+            sf_c14_flightControlSystem_get_eml_resolved_functions_info();
+          plhs[0] = mxDuplicateArray(persistentMxArray);
+          mxDestroyArray(persistentMxArray);
+          break;
+        }
+      }
+
      default:
       plhs[0] = mxCreateDoubleMatrix(0,0,mxREAL);
     }
@@ -216,6 +242,15 @@ unsigned int sf_flightControlSystem_third_party_uses_info( int nlhs, mxArray *
         }
       }
 
+     case 14:
+      {
+        if (strcmp(tpChksum, "s2fN5P7G8JbatJ1JIWzy1NB") == 0) {
+          extern mxArray *sf_c14_flightControlSystem_third_party_uses_info(void);
+          plhs[0] = sf_c14_flightControlSystem_third_party_uses_info();
+          break;
+        }
+      }
+
      default:
       plhs[0] = mxCreateDoubleMatrix(0,0,mxREAL);
     }
@@ -258,6 +293,15 @@ unsigned int sf_flightControlSystem_jit_fallback_info( int nlhs, mxArray * plhs[
         if (strcmp(tpChksum, "sAAmNgXbiI8yMdW3UN1t3ME") == 0) {
           extern mxArray *sf_c11_flightControlSystem_jit_fallback_info(void);
           plhs[0] = sf_c11_flightControlSystem_jit_fallback_info();
+          break;
+        }
+      }
+
+     case 14:
+      {
+        if (strcmp(tpChksum, "s2fN5P7G8JbatJ1JIWzy1NB") == 0) {
+          extern mxArray *sf_c14_flightControlSystem_jit_fallback_info(void);
+          plhs[0] = sf_c14_flightControlSystem_jit_fallback_info();
           break;
         }
       }
@@ -312,6 +356,17 @@ unsigned int sf_flightControlSystem_get_post_codegen_info( int nlhs, mxArray *
         }
       }
 
+     case 14:
+      {
+        if (strcmp(tpChksum, "s2fN5P7G8JbatJ1JIWzy1NB") == 0) {
+          const char *sf_c14_flightControlSystem_get_post_codegen_info(void);
+          const char* encoded_post_codegen_info =
+            sf_c14_flightControlSystem_get_post_codegen_info();
+          plhs[0] = sf_mex_decode(encoded_post_codegen_info);
+          break;
+        }
+      }
+
      default:
       plhs[0] = mxCreateDoubleMatrix(0,0,mxREAL);
     }
@@ -356,6 +411,16 @@ unsigned int sf_flightControlSystem_updateBuildInfo_args_info( int nlhs, mxArray
           extern mxArray *sf_c11_flightControlSystem_updateBuildInfo_args_info
             (void);
           plhs[0] = sf_c11_flightControlSystem_updateBuildInfo_args_info();
+          break;
+        }
+      }
+
+     case 14:
+      {
+        if (strcmp(tpChksum, "s2fN5P7G8JbatJ1JIWzy1NB") == 0) {
+          extern mxArray *sf_c14_flightControlSystem_updateBuildInfo_args_info
+            (void);
+          plhs[0] = sf_c14_flightControlSystem_updateBuildInfo_args_info();
           break;
         }
       }
