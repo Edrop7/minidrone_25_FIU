@@ -728,7 +728,7 @@ static void mdl_setup_runtime_resources_c4_flightControlSystem
   sfSetAnimationVectors(chartInstance->S, &chartInstance->c4_JITStateAnimation[0],
                         &chartInstance->c4_JITTransitionAnimation[0]);
   covrtCreateStateflowInstanceData(chartInstance->c4_covrtInstance, 1U, 0U, 1U,
-    101U);
+    103U);
   covrtChartInitFcn(chartInstance->c4_covrtInstance, 0U, false, false, false);
   covrtStateInitFcn(chartInstance->c4_covrtInstance, 0U, 0U, false, false, false,
                     0U, &c4_decisionTxtStartIdx, &c4_decisionTxtEndIdx);
